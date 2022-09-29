@@ -1,11 +1,14 @@
 import React, { createContext, useState } from 'react'
- const AuthContext = createContext() 
+export const AuthContext = createContext() 
 
 function AuthContextProvider({children}) {
-        const [loginstatus,setLoggedin] = useState(false)  
+        const [loginstatus,setLogin] = useState(false) 
+        const handaleloginstatus=()=>{
+          setLogin(!loginstatus)
+        } 
         // console.log(loggedin)
   return (
-    <AuthContext.Provider value={{loginstatus,setLoggedin}}>
+    <AuthContext.Provider value={{loginstatus,handaleloginstatus}}>
       {children}
     </AuthContext.Provider>
   )
