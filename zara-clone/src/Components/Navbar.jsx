@@ -16,9 +16,11 @@ import {
     Stack
 } from '@chakra-ui/react';
 import { AuthContext } from '../Context/Authcontext';
+import { Cartcontext } from '../Context/Cartcontext';
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { loginstatus, handaleloginstatus } = useContext(AuthContext);
+    const {cartdatas} = useContext(Cartcontext);
     return (
         <>
             <HStack pl={4} pr={4} pt={2}>
@@ -76,7 +78,7 @@ const Navbar = () => {
                                         d="M22.8 23.4v-9h-5.4v9l2.695-2.827L22.8 23.4zm-4.6-1.998l1.894-1.987L22 21.407V15.2h-3.8v6.202z"
                                     ></path>
                                     <text x="8" y="19" fontSize="xs" fontWeight={100} fill="black">
-                                        {/* {state.cart.length} */}0
+                                        {cartdatas.length}
                                     </text>
                                 </svg>
                             </Box>
