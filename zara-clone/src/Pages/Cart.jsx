@@ -9,7 +9,6 @@ import {
 
 import { Cartcontext } from '../Context/Cartcontext';
 import { Link } from 'react-router-dom';
-
 function Cart() {
   const { cartdatas,total} = useContext(Cartcontext);
   return (
@@ -69,9 +68,7 @@ function Cart() {
                           fontSize="xs"
                           fontWeight="200"
                           _hover={{ borderBottom: "1px", cursor: "pointer" }}
-                        //   onClick={() =>
-                        //     dispatch({ type: "Remove_from_cart", payload: el })
-                        //   }
+                          
                           mt={2}
                         >
                           Delete
@@ -105,7 +102,7 @@ function Cart() {
               </Text>
             </Box>
             <Box>
-              <Link to="/selection">
+              <Link to="/confirmation">
                 <Button
                   width="250px"
                   bg="black"
