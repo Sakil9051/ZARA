@@ -12,7 +12,7 @@ const Moredetails=()=> {
     useEffect(()=>{
         axios.get(`https://my-fack-api.herokuapp.com/Zaraproducts?_id=${id}`).then(res=>{
             setPagedata(res.data);
-            console.log(res.data)
+            // console.log(res.data)
         })
     },[id])
 
@@ -25,7 +25,7 @@ const Moredetails=()=> {
         }
         else{
             setExistedproduct(productsid.includes(pagedata[0]._id))
-            console.log(existedproduct)
+            // console.log(existedproduct)
         }
     }
 

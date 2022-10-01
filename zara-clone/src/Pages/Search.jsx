@@ -16,21 +16,28 @@ import {
 import { Select } from "@chakra-ui/react";
 import axios from "axios";
 
-const item = ["price", "size", "type1", "type2", "type3", "prod_name"];
+const item = ["price", "size", "prod_name"];
 function Search() {
     const [text,setText] =useState("")
     const[data,setData] = useState([])
     const[loading,setLoading] =useState(false)
-    const[page,setPage] =useState(1)
+    const[page,setPage] =useState(1);
+    const[totalpage,setTotalpage]=useState()
     const [sort, setSort] = useState("");
 
     const getsearch =()=>{
+      let url=`https://my-fack-api.herokuapp.com/Zaraproducts`;
+      if(sort==""&&text==true){
+        url=url+`?type1=${text}&_page=${page}&_limit=20`
+      }else{
+        url=url+`?type1=${text}&_sort=${sort}&_order=asc&_page=${page}&_limit=20`
+      }
         setLoading(true)
         axios
-          .get(`https://my-fack-api.herokuapp.com/Zaraproducts?type1=${text}&_page=${page}&_limit=20`)
+          .get(url)
           .then((res) => {
             setData(res.data);
-            
+            setTotalpage(res.headers["x-total-count"])
             console.log(res.data)
             setLoading(false);
           },[]);
@@ -43,10 +50,11 @@ function Search() {
 
           useEffect(() => {
             let url=`https://my-fack-api.herokuapp.com/Zaraproducts`;
-            if(sort){
+            
+            if(sort!=""&&text==false){
                 url=url+`?_sort=${sort}&_order=asc&_page=${page}&_limit=20`
             }
-             else if(sort==true&&text==true){
+             else if(sort&&text){
                 url=url+`?type1=${text}&_sort=${sort}&_order=asc&_page=${page}&_limit=20`
             }else if(text){
                 url=url+`?type1=${text}&_page=${page}&_limit=20`
@@ -58,6 +66,7 @@ function Search() {
               .get(url)
               .then((res) => {
                 setData(res.data);
+                setTotalpage(res.headers["x-total-count"])
                 setLoading(false);
               });
           }, [sort,page]);
@@ -161,7 +170,7 @@ function Search() {
       <Center mt={5}>
       <Button  disabled={page==1} onClick={()=>setPage(p=>p-1)}>Prev</Button>
       <Button m={1}>{page}</Button>
-      <Button onClick={()=>setPage(p=>p+1)}>next</Button>
+      <Button disabled={Math.ceil(Number(totalpage)/20)==page} onClick={()=>setPage(p=>p+1)}>next</Button>
       </Center>
     </Box>
   );

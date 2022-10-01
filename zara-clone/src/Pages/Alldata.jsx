@@ -16,10 +16,6 @@ const Alldata = ({imgUrl,prod_name,price,id}) => {
           <Text fontSize="xs">{prod_name}</Text>
           <Text fontSize="xs">{price}</Text>
         </Flex>
-
-        
-
-       
       </Box>
     </Container>
     </div>
