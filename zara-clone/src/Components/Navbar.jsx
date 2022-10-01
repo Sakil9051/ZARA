@@ -92,11 +92,12 @@ const Navbar = () => {
                 <DrawerContent>
                     <DrawerCloseButton />
                     <DrawerHeader ml={[0, 0, 12]} borderBottomWidth='1px'>
+                        <Link to="/">
                         <Image
                             w={"200px"}
                             src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/1024px-Zara_Logo.svg.png'
                             alt='Dan Abramov'
-                        />
+                        /></Link>
                     </DrawerHeader>
                     <DrawerBody>
                         <Dbody />
