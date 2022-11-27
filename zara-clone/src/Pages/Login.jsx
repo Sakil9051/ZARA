@@ -43,7 +43,7 @@ function Login() {
   };
 
   const handaleforgotpasswort=()=>{
-    axios.get(`https://my-fack-api.herokuapp.com/users?email=${Findpassword.email}`).then(res=>{
+    axios.get(`https://combative-pink-beetle.cyclic.app/users?email=${Findpassword.email}`).then(res=>{
       if(res.data.length>=1){
         alert(`Your password is :- ${res.data[0].password}`)
       }else{
