@@ -28,10 +28,10 @@ function Singup() {
         duration: 9000,
         isClosable: true,
       });
-    }else if(user.password.match(/^[A-Za-z]\w{7,14}$/)){
+    }else if(user.password.match("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")){
       toast({
         title: "Account not created.",
-        description: "Your Password should gave  7 to 14 characters which contain only characters, numeric digits, underscore and first character must be a letter",
+        description: "Password should Minimum eight characters, at least one letter, one number and one special character",
         status: "error",
         duration: 9000,
         isClosable: true,
