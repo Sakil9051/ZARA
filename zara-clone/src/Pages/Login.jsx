@@ -58,6 +58,7 @@ function Login() {
   const handleSubmit = () => {
     axios.get(`https://combative-pink-beetle.cyclic.app/users?email=${login.email}&password=${login.password}`)
       .then((res) => {
+      console.log(res.data)
         if(res.data.length>=1){
           toast({
             title: "Logged in Successfully",
