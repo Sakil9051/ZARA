@@ -38,7 +38,7 @@ function Singup() {
       });
     }else{
       axios({
-          url: "https://my-fack-api.herokuapp.com/users",
+          url: "https://combative-pink-beetle.cyclic.app/users",
           method: "POST",
           data: user
         }).then(res=>{
