@@ -56,7 +56,7 @@ function Login() {
     })
   }
   const handleSubmit = () => {
-    axios.get(`https://my-fack-api.herokuapp.com/users?email=${login.email}&password=${login.password}`)
+    axios.get(`https://combative-pink-beetle.cyclic.app/users?email=${login.email}&password=${login.password}`)
       .then((res) => {
         if(res.data.length>=1){
           toast({
