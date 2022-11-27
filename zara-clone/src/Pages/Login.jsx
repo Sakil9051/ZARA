@@ -124,7 +124,7 @@ function Login() {
                 onChange={handleChange}
                 value={login.password}
                 name="password"
-                type="password"
+                type="text"
                 placeholder="enter password...."
               />
               <Text cursor={"pointer"} fontSize="xs" fontWeight="600" mt="10%" onClick={onOpen}>
