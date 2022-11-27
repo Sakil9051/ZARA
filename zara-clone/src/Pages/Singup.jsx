@@ -74,7 +74,7 @@ function Singup() {
           <FormLabel>Password</FormLabel>
           <Input
             name='password'
-            type='password'
+            type='text'
             value={user.password}
             onChange={handleChange}
             placeholder={"Enter password..."}
@@ -103,7 +103,7 @@ function Singup() {
             onChange={handleChange}
             placeholder={"Enter Address..."}
           />
-          <FormLabel>Address</FormLabel>
+          <FormLabel>State</FormLabel>
           <Input
             name='state'
             type='text'
@@ -111,7 +111,7 @@ function Singup() {
             onChange={handleChange}
             placeholder={"Enter State name..."}
           />
-          <FormLabel>Address</FormLabel>
+          <FormLabel>Locality</FormLabel>
           <Input
             name='locality'
             type='text'
