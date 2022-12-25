@@ -30,7 +30,7 @@ function Men() {
 
 
   useEffect(() => {
-    let url = `https://my-fack-api.herokuapp.com/Zaraproducts`;
+    let url = `https://combative-pink-beetle.cyclic.app/Zaraproducts`;
     if (sort) {
       url = url + `?type1=MEN&_sort=${sort}&_order=asc&_page=${page}&_limit=20`
     }
