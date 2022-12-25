@@ -26,7 +26,7 @@ function Search() {
     const [sort, setSort] = useState("");
 
     const getsearch =()=>{
-      let url=`https://my-fack-api.herokuapp.com/Zaraproducts`;
+      let url=`https://combative-pink-beetle.cyclic.app/Zaraproducts`;
       if(sort==""&&text==true){
         url=url+`?type1=${text}&_page=${page}&_limit=20`
       }else{
@@ -49,7 +49,7 @@ function Search() {
           
 
           useEffect(() => {
-            let url=`https://my-fack-api.herokuapp.com/Zaraproducts`;
+            let url=`https://combative-pink-beetle.cyclic.app/Zaraproducts`;
             
             if(sort!=""&&text==false){
                 url=url+`?_sort=${sort}&_order=asc&_page=${page}&_limit=20`
