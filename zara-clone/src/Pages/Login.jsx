@@ -43,7 +43,7 @@ function Login() {
   };
 
   const handaleforgotpasswort=()=>{
-    axios.get(`https://combative-pink-beetle.cyclic.app/users?email=${Findpassword.email}`).then(res=>{
+    axios.get(`https://vast-pear-bream-suit.cyclic.app/users?email=${Findpassword.email}`).then(res=>{
       if(res.data.length>=1){
         alert(`Your password is :- ${res.data[0].password}`)
       }else{
@@ -56,7 +56,7 @@ function Login() {
     })
   }
   const handleSubmit = () => {
-    axios.get(`https://combative-pink-beetle.cyclic.app/users?email=${login.email}&password=${login.password}`)
+    axios.get(`https://vast-pear-bream-suit.cyclic.app/users?email=${login.email}&password=${login.password}`)
       .then((res) => {
       console.log(res.data)
         if(res.data.length>=1){
