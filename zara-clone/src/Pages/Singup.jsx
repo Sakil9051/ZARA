@@ -38,7 +38,7 @@ function Singup() {
       });
     }else{
       axios({
-          url: "https://combative-pink-beetle.cyclic.app/users",
+          url: "https://vast-pear-bream-suit.cyclic.app/users",
           method: "POST",
           data: user
         }).then(res=>{
